@@ -1,0 +1,27 @@
+.mainContainer {
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  transform:translateX(-50%);
+}
+
+h1 {
+  text-align: center;
+}
+
+.searchBar {
+  text-align: center;
+  margin: 20px;
+}
+
+.dataContainer {
+  height: 800px;
+  overflow: auto;
+}
+
+.dataCell {
+  text-align: center;
+  border-style: solid;
+  border-radius: 5px;
+  margin: 3px;
+}

@@ -3,9 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <search></search>
+    <search class="container"></search>
   `,
-  styles: ['']
+  styles: [`
+    .container {
+      width: 100%
+    }
+  `]
 })
 export class AppComponent {
   title = 'app';

@@ -1,18 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'search',
   template: `
-    <input
-      [(ngModel)]="searchTerm"
-      placeholder="Type some keywords!"
-    >
-    <div [hidden]="filterResults(data.name)" *ngFor="let data of dataArr">{{ data.name }}</div>
+    <div class="mainContainer">
+      <h1>Country Filter</h1>
+      <div class="searchBar">
+        <input
+          [(ngModel)]="searchTerm"
+          placeholder="Type some keywords!"
+        >
+      </div>
+      <div class="dataContainer">
+        <div class="dataCell" [hidden]="filterResults(data.name)" *ngFor="let data of dataArr">{{ data.name }}</div>
+      </div>
+    </div>
   `,
-  styles: ['']
+  styleUrls: ['search.css']
 })
 
-export class Search implements OnInit {
+export class Search {
   searchTerm = '';
   dataArr = [
     {name: 'Afghanistan', code: 'AF'},
@@ -258,10 +265,6 @@ export class Search implements OnInit {
     {name: 'Zambia', code: 'ZM'},
     {name: 'Zimbabwe', code: 'ZW'}
   ]
-
-  ngOnInit() {
-    // this.dataArr = this.dataArr.sort();
-  }
 
   filterResults(index) {
     const length = this.searchTerm.length;
