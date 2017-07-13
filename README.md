@@ -1,5 +1,9 @@
 # Ng2Search
 
+
+[Demo](https://somethiiing.github.io/ng2-challenges)
+[Demo2](https://somethiiing.github.io/ng2-search)
+
 ## Features
 * Takes in and renders a list.
 * Uses input to real time search.
