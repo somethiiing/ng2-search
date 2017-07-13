@@ -29,6 +29,7 @@ export class Api {
   }
 
   getApiData(path: string, options?: string): Observable<any> {
+
     let urls = [];
     const url = `${this.tmdb_api_url}${path}?api_key=${this.tmdb_api_key}${options}&page=`
     for (let i = 1; i < 21; i++) {
@@ -37,13 +38,11 @@ export class Api {
     return Observable.forkJoin(urls)
       .map(data => this.getJson(data))
       .map(data => this.combineData(data))
-      .do( data => console.log(data))
       .map(data => {
         return data.sort((a, b) => {
           return a.title.localeCompare(b.title);
         })
       })
-      .do( data => console.log(data))
   }
 
 
